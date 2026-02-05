@@ -1,0 +1,9 @@
+{% extends 'blogpage/base_blogpage.html' %}
+
+{% block content %}
+    <ul>
+        {% for task in tasks %}
+            <li> {{ task.0 }} - {{ task.1|date:"Y-m-d" }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

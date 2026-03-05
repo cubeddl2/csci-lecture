@@ -56,6 +56,8 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'mysite.urls'
 
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -121,3 +123,6 @@ USE_TZ = True
 
 STATIC_URL = os.getenv('STATIC_URL')
 STATIC_ROOT =[os.path.join(BASE_DIR, 'static')]
+
+LOGIN_REDIRECT_URL = "/blogpage/list"
+LOGOUT_REDIRECT_URL = "/accounts/login"

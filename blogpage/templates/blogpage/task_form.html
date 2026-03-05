@@ -1,5 +1,8 @@
 {% extends 'blogpage/base_blogpage.html' %}
 
+{% block title %}Add a new task {% endblock %}
+{% block header %}Add Task {% endblock %}
+
 {% block content %}
     <form method="POST">
         {% csrf_token %}

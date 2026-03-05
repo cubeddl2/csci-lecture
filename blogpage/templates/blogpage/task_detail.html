@@ -1,0 +1,13 @@
+{% extends 'blogpage/base_blogpage.html' %}
+
+{% block title %} Task List | {{ task.name }}{% endblock %}
+{% block header %}
+    Task List || {{ task.taskgroup.name }}
+{% endblock %}
+{% block content %}
+    <h2>{{ task.taskgroup.name }}</h2>
+    <h2>Made by: {{ task.profile.user.username }}</h2>
+    <h2>{{ task.name }}</h2>>
+    <p>Due on {{ task.due_date|date:"Y-m-d" }}</p>
+    <a href="{% url "blogpage:task_update' pk=task.pk %}">Update task</a>
+{% endblock %}

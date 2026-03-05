@@ -7,7 +7,15 @@
     </head>
 
     <body>
-        {% block header %} {% endblock %}
+        {% if user.is_authenticated%}
+            <h3>Hello {{ user.username }}</h3>
+            <!--{% include 'registration/logout.html' %} -->
+        {% else %}
+            <a href="{% url 'login' %}">Login</a>
+        {% endif %}
+        {% block header %}
+            <h2>Task List</h2>
+        {% endblock %}
         <div id = "content">
             {% block content %}{% endblock %}
         </div>
